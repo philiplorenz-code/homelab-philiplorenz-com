@@ -1,0 +1,4 @@
+---
+mount_point: "/mnt/nfs"
+nfs_server: "192.168.30.4"
+nfs_share: "/volume1/vm-nfs"

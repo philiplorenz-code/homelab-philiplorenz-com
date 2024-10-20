@@ -1,0 +1,8 @@
+---
+users:
+  - name: philip
+    shell: /bin/bash
+    ssh_key: files/philip_ssh_key.pub
+  - name: ansible
+    shell: /bin/bash
+    ssh_key: files/ansible_ssh_key.pub

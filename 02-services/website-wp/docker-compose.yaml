@@ -1,0 +1,19 @@
+version: '3.6'
+services:
+  mariadb:
+      image: mariadb
+      volumes:
+      - database:/var/lib/mysql
+
+  wordpress:
+      image: wordpress:latest
+      depends_on:
+          - mariadb
+      ports:
+          - 8080:80
+      restart: always
+      volumes:
+          - wordpress:/var/www/html
+volumes:
+    wordpress:
+    database:

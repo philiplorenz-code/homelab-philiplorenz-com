@@ -1,0 +1,2 @@
+portainer_compose_file: /opt/portainer/docker-compose.yml
+portainer_data_volume: /opt/portainer/data

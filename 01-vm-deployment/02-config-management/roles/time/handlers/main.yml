@@ -1,0 +1,6 @@
+---
+# handlers file for time
+- name: restart service
+  service:
+    name: example_service
+    state: restarted

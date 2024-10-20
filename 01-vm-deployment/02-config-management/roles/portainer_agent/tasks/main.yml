@@ -1,0 +1,17 @@
+---
+- name: Pull Portainer Agent image
+  docker_image:
+    name: portainer/agent
+    source: pull
+
+- name: Ensure Portainer Agent container is running
+  docker_container:
+    name: portainer-agent
+    image: portainer/agent
+    state: started
+    restart_policy: always
+    ports:
+      - "9001:9001"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /var/lib/docker/volumes:/var/lib/docker/volumes

@@ -1,0 +1,6 @@
+---
+portainer_agent_image: "portainer/agent"
+portainer_agent_port: "9001"
+portainer_agent_volumes:
+  - /var/run/docker.sock:/var/run/docker.sock
+  - /var/lib/docker/volumes:/var/lib/docker/volumes

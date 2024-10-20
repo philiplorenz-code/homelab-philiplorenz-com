@@ -1,0 +1,8 @@
+---
+# Liste der Ports, die durch die Firewall erlaubt werden sollen.
+allowed_ports:
+  - 9001 # Portainer Agent
+  - 9443 # Portainer
+  - 22 # SSH: Remote Login und Management
+  - 80 # HTTP: Ungesicherter Webverkehr
+  - 443 # HTTPS: Gesicherter Webverkehr

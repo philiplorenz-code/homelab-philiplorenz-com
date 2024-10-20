@@ -1,0 +1,18 @@
+- name: Install chrony
+  apt:
+    name: chrony
+    state: present
+
+- name: Configure primary and secondary NTP servers in chrony
+  blockinfile:
+    path: /etc/chrony/chrony.conf
+    marker: "# {mark} ANSIBLE MANAGED NTP SERVERS"
+    block: |
+      server 0.de.pool.ntp.org iburst
+      server 1.de.pool.ntp.org iburst
+
+- name: Ensure chrony service is running and enabled
+  service:
+    name: chrony
+    state: started
+    enabled: yes

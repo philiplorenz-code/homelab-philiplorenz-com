@@ -1,0 +1,6 @@
+---
+- name: Restart Portainer
+  shell: |
+    docker-compose -f {{ portainer_compose_file }} restart
+  args:
+    chdir: "{{ portainer_data_volume }}"

@@ -1,0 +1,19 @@
+---
+- name: Ensure Portainer data directory exists
+  file:
+    path: "{{ portainer_data_volume }}"
+    state: directory
+
+- name: Copy docker-compose.yml for Portainer
+  copy:
+    src: docker-compose.yml
+    dest: "{{ portainer_compose_file }}"
+    mode: '0644'
+
+- name: Bring up Portainer with Docker Compose
+  shell: |
+    docker-compose -f {{ portainer_compose_file }} up -d
+  args:
+    chdir: "{{ portainer_data_volume }}"
+  notify:
+    - Restart Portainer

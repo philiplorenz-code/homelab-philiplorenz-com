@@ -1,0 +1,7 @@
+---
+# meta file for time
+galaxy_info:
+  author: Philip Lorenz
+  description: time settings
+  license: MIT
+  min_ansible_version: "2.9"

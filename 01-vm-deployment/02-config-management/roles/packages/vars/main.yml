@@ -1,0 +1,17 @@
+packages:
+  - curl
+  - vim
+  - git
+  - htop
+  - docker.io
+  - net-tools
+  - ufw
+  - ca-certificates
+  - software-properties-common
+  - php
+  - golang
+  - docker-compose
+  - bash-completion
+  - unzip
+  - ansible
+  - qemu-guest-agent
