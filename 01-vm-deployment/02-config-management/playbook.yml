@@ -1,7 +1,6 @@
 - hosts: all
   become: true
   roles:
-    - ftp_user
     - firewall
     - packages
     - portainer_agent

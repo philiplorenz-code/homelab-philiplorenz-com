@@ -7,3 +7,4 @@ allowed_ports:
   - 22 # SSH: Remote Login und Management
   - 80 # HTTP: Ungesicherter Webverkehr
   - 443 # HTTPS: Gesicherter Webverkehr
+  - 81 # NPM Management
