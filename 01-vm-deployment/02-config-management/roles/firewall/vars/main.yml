@@ -3,6 +3,7 @@
 allowed_ports:
   - 9001 # Portainer Agent
   - 9443 # Portainer
+  - 9445 # Vaultwarden
   - 22 # SSH: Remote Login und Management
   - 80 # HTTP: Ungesicherter Webverkehr
   - 443 # HTTPS: Gesicherter Webverkehr
