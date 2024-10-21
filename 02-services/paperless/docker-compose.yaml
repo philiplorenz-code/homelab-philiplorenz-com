@@ -1,21 +1,17 @@
 services:
   broker:
-    image: docker.io/library/redis:7
-    restart: always
-    ports:
-      - "6379:6379"
-    volumes:
-      - redisdata:/data
+    image: redis:6.0
+    restart: unless-stopped
 
   db:
-    image: docker.io/library/postgres:16
-    restart: always
+    image: postgres:13
+    restart: unless-stopped
     volumes:
       - pgdata:/var/lib/postgresql/data
 
 
   webserver:
-    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    image: jonaswinkler/paperless-ng:latest
     restart: always
     depends_on:
       - db
