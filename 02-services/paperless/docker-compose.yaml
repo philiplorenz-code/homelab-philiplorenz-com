@@ -15,7 +15,7 @@ services:
 
 
   webserver:
-    image: ghcr.io/paperless-ngx/paperless-ngx:2.12.1
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
     restart: always
     depends_on:
       - db
