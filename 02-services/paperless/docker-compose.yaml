@@ -2,6 +2,8 @@ services:
   broker:
     image: docker.io/library/redis:7
     restart: always
+    ports:
+      - "6379:6379"
     volumes:
       - redisdata:/data
 
