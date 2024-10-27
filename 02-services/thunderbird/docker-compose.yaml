@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  thunderbird:
+    image: ich777/thunderbird
+    container_name: Thunderbird
+    ports:
+      - "8089:8080"
+    environment:
+      - THUNDERBIRD_V=latest
+      - THUNDERBIRD_LANG=en-US
+      - TURBOVNC_PARAMS=-securitytypes none
+      - CUSTOM_RES_W=1280
+      - CUSTOM_RES_H=768
+      - UID=99
+      - GID=100
+      - UMASK=000
+      - DATA_PERM=770
+    volumes:
+      - ./thunderbird:/thunderbird
+    restart: unless-stopped
