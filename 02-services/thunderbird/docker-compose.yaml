@@ -3,9 +3,12 @@ services:
   thunderbird:
     image: jlesage/thunderbird
     container_name: thunderbird
+    environment:
+      USER_ID: 0
+      GROUP_ID: 0
     volumes:
       # Beispiel-Mounts
-      - /mnt/nfs/mail:/config
+      - config:/config
     ports:
       # Beispiel-Port-Weiterleitung
       - 5800:5800
