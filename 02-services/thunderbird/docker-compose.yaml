@@ -5,7 +5,7 @@ services:
     container_name: thunderbird
     volumes:
       # Beispiel-Mounts
-      - config:/config
+      - /mnt/nfs/mail:/config
     ports:
       # Beispiel-Port-Weiterleitung
       - 5800:5800
