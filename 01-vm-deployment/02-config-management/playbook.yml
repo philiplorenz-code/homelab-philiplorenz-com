@@ -1,13 +1,13 @@
 - hosts: all
   become: true
   roles:
+    - nfsmount
     - firewall
     - packages
     - portainer_agent
     - users
     - update
     - time
-    - nfsmount
 - hosts: observer
   become: true
   roles:
