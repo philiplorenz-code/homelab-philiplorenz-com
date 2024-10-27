@@ -4,8 +4,8 @@ services:
     image: jlesage/thunderbird
     container_name: thunderbird
     environment:
-      USER_ID: 0
-      GROUP_ID: 0
+      USER_ID: 1000
+      GROUP_ID: 1000
     volumes:
       # Beispiel-Mounts
       - /mnt/mailstore:/config
