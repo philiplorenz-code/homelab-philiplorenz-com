@@ -8,3 +8,4 @@ allowed_ports:
   - 80 # HTTP: Ungesicherter Webverkehr
   - 443 # HTTPS: Gesicherter Webverkehr
   - 81 # NPM Management
+  - 8089 # Thunderbird Hosted
