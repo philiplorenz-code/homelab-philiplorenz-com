@@ -1,19 +1,12 @@
 services:
   thunderbird:
-    image: ich777/thunderbird
-    container_name: Thunderbird
-    ports:
-      - "8089:8080"
-    environment:
-      - THUNDERBIRD_V=latest
-      - THUNDERBIRD_LANG=en-US
-      - TURBOVNC_PARAMS=-securitytypes none
-      - CUSTOM_RES_W=1280
-      - CUSTOM_RES_H=768
-      - UID=99
-      - GID=100
-      - UMASK=000
-      - DATA_PERM=777
+    image: jlesage/thunderbird
+    container_name: thunderbird
     volumes:
-      - /mnt/mailstore/thunderbird:/thunderbird
+      # Beispiel-Mounts
+      - ./thunderbird2:/thunderbird
+    ports:
+      # Beispiel-Port-Weiterleitung
+      - 5800:5800
+      - 5900:5900
     restart: unless-stopped
