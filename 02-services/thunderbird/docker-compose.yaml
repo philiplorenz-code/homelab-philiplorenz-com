@@ -8,7 +8,7 @@ services:
       GROUP_ID: 1000
     volumes:
       # Beispiel-Mounts
-      - /mnt/mailstore:/config
+      - /mnt/mailbackup:/config
     ports:
       # Beispiel-Port-Weiterleitung
       - 5800:5800
