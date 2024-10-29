@@ -22,7 +22,7 @@
     path: "{{ item.mount_point }}"
     src: "{{ item.nfs_server }}:{{ item.nfs_share }}"
     fstype: nfs
-    opts: defaults
+    opts: rw,noatime
     state: mounted
   loop: "{{ nfs_mounts }}"
 
@@ -31,6 +31,15 @@
     path: "{{ item.mount_point }}"
     src: "{{ item.nfs_server }}:{{ item.nfs_share }}"
     fstype: nfs
-    opts: defaults
+    opts: rw,noatime
     state: present
   loop: "{{ nfs_mounts }}"
+
+- name: Set ownership for philip on NFS mount points
+  file:
+    path: "{{ item.mount_point }}"
+    owner: 1000  # UID von philip
+    group: 1000  # GID von philip
+    mode: '0777'
+  loop: "{{ nfs_mounts }}"
+  when: ansible_user == "philip"

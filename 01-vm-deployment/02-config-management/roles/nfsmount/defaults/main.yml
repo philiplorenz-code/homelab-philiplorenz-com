@@ -3,6 +3,6 @@ nfs_mounts:
 - mount_point: "/mnt/nfs"
   nfs_server: "192.168.30.4"
   nfs_share: "/volume1/vm-nfs"
-- mount_point: "/mnt/mailstore"
+- mount_point: "/mnt/mailbackup"
   nfs_server: "192.168.30.4"
-  nfs_share: "/volume2/mail-backup"
+  nfs_share: "/volume1/mailbackup"
