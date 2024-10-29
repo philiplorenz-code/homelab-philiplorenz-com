@@ -35,11 +35,11 @@
     state: present
   loop: "{{ nfs_mounts }}"
 
-- name: Set ownership for philip on NFS mount points
-  file:
-    path: "{{ item.mount_point }}"
-    owner: 1000  # UID von philip
-    group: 1000  # GID von philip
-    mode: '0777'
-  loop: "{{ nfs_mounts }}"
-  when: ansible_user == "philip"
+# - name: Set ownership for philip on NFS mount points
+#   file:
+#     path: "{{ item.mount_point }}"
+#     owner: 1000  # UID von philip
+#     group: 1000  # GID von philip
+#     mode: '0777'
+#   loop: "{{ nfs_mounts }}"
+#   when: ansible_user == "philip"
