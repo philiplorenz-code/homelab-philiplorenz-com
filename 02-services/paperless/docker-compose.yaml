@@ -1,3 +1,4 @@
+version: "3.4"
 services:
   broker:
     image: docker.io/library/redis:7
@@ -10,6 +11,10 @@ services:
     restart: unless-stopped
     volumes:
       - pgdata:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: paperless
 
   webserver:
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
@@ -17,24 +22,39 @@ services:
     depends_on:
       - db
       - broker
+      - gotenberg
+      - tika
     ports:
       - "8000:8000"
     volumes:
-      - /mnt/paperless/data:/usr/src/paperless/data
-      - /mnt/paperless/media:/usr/src/paperless/media
-      - /mnt/paperless/export:/usr/src/paperless/export
-      - /mnt/paperless/consume:/usr/src/paperless/consume
+      - /mnt/data:/usr/src/paperless/data
+      - /mnt/media:/usr/src/paperless/media
+      - /mnt/export:/usr/src/paperless/export
+      - /mnt/consume:/usr/src/paperless/consume
     environment:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
+      PAPERLESS_TIKA_ENABLED: 1
+      PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://gotenberg:3000
+      PAPERLESS_TIKA_ENDPOINT: http://tika:9998
       PAPERLESS_OCR_LANGUAGES: de
       USERMAP_UID: 1000
       USERMAP_GID: 1000
-      PAPERLESS_URL:
-      PAPERLESS_ADMIN_USER:
-      PAPERLESS_ADMIN_PASSWORD:
 
+  gotenberg:
+    image: docker.io/gotenberg/gotenberg:7.10
+    restart: unless-stopped
+    command:
+      - "gotenberg"
+      - "--chromium-disable-javascript=true"
+      - "--chromium-allow-list=file:///tmp/.*"
+
+  tika:
+    image: ghcr.io/paperless-ngx/tika:latest
+    restart: unless-stopped
 
 volumes:
+  data:
+  media:
   pgdata:
   redisdata:
