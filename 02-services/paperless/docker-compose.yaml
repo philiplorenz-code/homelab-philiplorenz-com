@@ -40,6 +40,17 @@ services:
       PAPERLESS_OCR_LANGUAGES: de
       USERMAP_UID: 1000
       USERMAP_GID: 1000
+      POSTGRES_DB:
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
+      PAPERLESS_SECRET_KEY:
+      PAPERLESS_TIME_ZONE:
+      PAPERLESS_OCR_LANGUAGE:
+      PAPERLESS_ADMIN_USER:
+      PAPERLESS_ADMIN_PASSWORD:
+      PAPERLESS_URL:
+
+
 
   gotenberg:
     image: docker.io/gotenberg/gotenberg:7.10
