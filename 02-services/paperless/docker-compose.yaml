@@ -52,6 +52,7 @@ services:
       PAPERLESS_CONSUMER_POLLING: 10
       PAPERLESS_CONSUMER_ENABLE_BARCODES: 1
       PAPERLESS_CONSUMER_ENABLE_ASN_BARCODE: 1
+      PAPERLESS_OCR_USER_ARGS: '{"invalidate_digital_signatures": true}'
 
 
 
