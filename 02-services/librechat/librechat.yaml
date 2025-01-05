@@ -59,10 +59,10 @@ interface:
 
   endpointsMenu: true
   modelSelect: true
-  parameters: true
+  parameters: false
   sidePanel: true
-  presets: true
+  presets: false
   prompts: true
-  bookmarks: true
-  multiConvo: true
+  bookmarks: false
+  multiConvo: false
   agents: true
