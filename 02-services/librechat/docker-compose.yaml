@@ -16,6 +16,7 @@ services:
    # https://hub.docker.com/u/librechat - uses single image from DockerFile 
     volumes:
       - /LibreChat/images:/app/client/public/images
+      - /LibreChat/config:/app/config
   meilisearch:
     container_name: chat-meilisearch
     image: getmeili/meilisearch:v1.5.1
