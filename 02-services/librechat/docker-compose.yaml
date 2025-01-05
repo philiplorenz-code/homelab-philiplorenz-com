@@ -1,5 +1,4 @@
 # review .env at https://github.com/danny-avila/LibreChat/blob/main/.env.example
-version: "3.8"
 services:
   api:
     image: librechat/librechat-dev:latest
