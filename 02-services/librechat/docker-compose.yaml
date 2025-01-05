@@ -6,8 +6,6 @@ services:
     ports:
       - 3080:3080
     restart: always
-    env_file:
-      - stack.env
     environment:
       - HOST=0.0.0.0
       - NODE_ENV=production
@@ -21,8 +19,6 @@ services:
     container_name: chat-meilisearch
     image: getmeili/meilisearch:v1.5.1
     restart: always
-    env_file:
-      - stack.env
     environment:
       - MEILI_HOST=http://meilisearch:7700
       - MEILI_NO_ANALYTICS=true
