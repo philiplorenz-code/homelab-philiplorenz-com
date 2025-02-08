@@ -13,3 +13,6 @@ services:
       - GENERIC_TIMEZONE=Europe/Berlin
     volumes:
       - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:
