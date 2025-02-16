@@ -1,0 +1,45 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroBanner {
+  background-color: #012456; /* dunkles Blau/Grün, wie du magst */
+  color: #ffffff;            /* helle Schrift auf dunklem Hintergrund */
+  padding: 2rem 0;          /* etwas Luft nach oben/unten */
+}
+
+.powerShellLogo {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.powershellSnippet {
+  background-color: #1e1e1e;  /* dunkler Hintergrund fürs Snippet */
+  color: #ffffff;             /* helle Schrift */
+  padding: 1rem;
+  border-radius: 0.4rem;
+  font-family: Consolas, "Courier New", Courier, monospace;
+  margin: 1rem 0;
+  font-size: 1.4rem; 
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+    background-color: #012456; /* Dunkles Blau */
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

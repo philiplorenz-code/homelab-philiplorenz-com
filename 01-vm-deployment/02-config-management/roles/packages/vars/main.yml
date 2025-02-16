@@ -1,4 +1,5 @@
 packages:
+  - rsync
   - curl
   - vim
   - git

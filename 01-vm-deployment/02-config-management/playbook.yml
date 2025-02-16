@@ -1,9 +1,9 @@
 - hosts: all
   become: true
   roles:
+    - packages
     - nfsmount
     - firewall
-    - packages
     - portainer_agent
     - users
     - update

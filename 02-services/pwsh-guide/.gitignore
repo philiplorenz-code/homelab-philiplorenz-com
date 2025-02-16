@@ -1,0 +1,41 @@
+# Dependencies
+/node_modules
+
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+# Misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# Abhängigkeiten
+node_modules/
+
+# Docusaurus generiert zwei Verzeichnisse, die nicht versioniert werden sollten:
+.docusaurus/
+build/
+
+# Log-Dateien
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Betriebssystem-spezifische Dateien (z. B. macOS und Windows)
+.DS_Store
+Thumbs.db
+
+# Temporäre Dateien (optional)
+*.tmp
+*.temp

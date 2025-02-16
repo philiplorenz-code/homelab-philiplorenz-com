@@ -1,0 +1,36 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  /* PowerShell-Blau als Primärfarbe */
+  --ifm-color-primary: #007acc;        /* Standard (helleres PS-Blau) */
+  --ifm-color-primary-dark: #006bb3;   /* etwas dunkler */
+  --ifm-color-primary-darker: #005d9f; /* noch dunkler */
+  --ifm-color-primary-darkest: #004275; 
+  --ifm-color-primary-light: #1994dd;  
+  --ifm-color-primary-lighter: #3aa6e3;
+  --ifm-color-primary-lightest: #63b9ec;
+
+  /* Schriftgröße im Code (kannst du anpassen) */
+  --ifm-code-font-size: 95%;
+  /* Zeilenhintergrund bei aktivem Highlighten */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* Für den Dark Mode passend etwas intensiver/luminanteres Blau */
+[data-theme='dark'] {
+  --ifm-color-primary: #0098ff;
+  --ifm-color-primary-dark: #0088e6;
+  --ifm-color-primary-darker: #0076cc;
+  --ifm-color-primary-darkest: #005ea6;
+  --ifm-color-primary-light: #1aa9ff;
+  --ifm-color-primary-lighter: #42b9ff;
+  --ifm-color-primary-lightest: #78cfff;
+
+  /* Beim Dark Theme noch etwas kräftigerer Code-Highlight-Hintergrund */
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.15);
+}
