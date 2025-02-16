@@ -1,0 +1,19 @@
+---
+- name: Install cron package (if not installed)
+  ansible.builtin.package:
+    name: cron
+    state: present
+
+- name: Ensure cron service is running
+  ansible.builtin.service:
+    name: cron
+    state: started
+    enabled: yes
+
+- name: Add cron job to execute docker-compose and git pull every 30 minutes
+  ansible.builtin.cron:
+    name: "Update and restart Docker services"
+    minute: "*/2"
+    job: "cd /pwsh-tut/homelab-philiplorenz-com/02-services/pwsh-guide && docker-compose down && git pull && docker-compose up -d"
+    user: "root"
+
