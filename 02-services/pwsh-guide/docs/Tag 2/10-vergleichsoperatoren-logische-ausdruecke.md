@@ -16,23 +16,16 @@ PowerShell verwendet verschiedene Operatoren, um Werte miteinander zu vergleiche
 
 ### 1.1 Numerische und Textvergleiche
 
-- **-eq:** Gleich (equal to)  
-  Beispiel: `if ($a -eq $b) { ... }`
+Im Folgenden findest du eine Tabelle, die die gängigen Vergleichsoperatoren in PowerShell zusammenfasst. Diese Operatoren werden sowohl für numerische als auch für textuelle Vergleiche genutzt.
 
-- **-ne:** Ungleich (not equal to)  
-  Beispiel: `if ($a -ne $b) { ... }`
-
-- **-lt:** Kleiner als (less than)  
-  Beispiel: `if ($a -lt $b) { ... }`
-
-- **-le:** Kleiner oder gleich (less than or equal to)  
-  Beispiel: `if ($a -le $b) { ... }`
-
-- **-gt:** Größer als (greater than)  
-  Beispiel: `if ($a -gt $b) { ... }`
-
-- **-ge:** Größer oder gleich (greater than or equal to)  
-  Beispiel: `if ($a -ge $b) { ... }`
+| Operator | Beschreibung                                 | Beispiel-Code                                      | Beispiel-Output           |
+|----------|----------------------------------------------|----------------------------------------------------|---------------------------|
+| -eq      | Gleich (equal to)                            | `if (5 -eq 5) { "Equal" }`                          | Equal                     |
+| -ne      | Ungleich (not equal to)                      | `if (5 -ne 3) { "Not Equal" }`                      | Not Equal                 |
+| -lt      | Kleiner als (less than)                      | `if (3 -lt 5) { "Less" }`                           | Less                      |
+| -le      | Kleiner oder gleich (less than or equal to)  | `if (5 -le 5) { "Less or Equal" }`                  | Less or Equal             |
+| -gt      | Größer als (greater than)                    | `if (7 -gt 5) { "Greater" }`                        | Greater                   |
+| -ge      | Größer oder gleich (greater than or equal to)| `if (5 -ge 5) { "Greater or Equal" }`               | Greater or Equal          |
 
 ### 1.2 Spezielle Vergleichsoperatoren für Strings und Collections
 

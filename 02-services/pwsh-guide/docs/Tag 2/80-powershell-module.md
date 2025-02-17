@@ -8,11 +8,6 @@ sidebar_position: 80
 
 PowerShell-Module sind Sammlungen von Funktionen, Cmdlets, Variablen und anderen Ressourcen, die in einer oder mehreren Dateien organisiert und als Einheit bereitgestellt werden. Module ermöglichen es dir, wiederverwendbaren Code zu strukturieren und zu verteilen – sei es als interne Lösung oder als öffentlich verfügbare Erweiterung.
 
-> **Tipp zur Visualisierung:**  
-> Eine begleitende Grafik könnte den Aufbau eines PowerShell-Moduls veranschaulichen, beispielsweise:
-> - Den Ordneraufbau eines Moduls (Module-Ordner, .psm1-Datei, Manifest-Datei)
-> - Den Ablauf, wie ein Modul in PowerShell geladen wird
-> - Die Beziehung zwischen Modulinhalt und den veröffentlichten Funktionen
 
 ## 1. Woher kommen Module?
 
