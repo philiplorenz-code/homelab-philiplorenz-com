@@ -1,0 +1,5 @@
+- Powershell 7 vs 5.1
+- https://www.scriptrunner.com/de/blog/5-powershell-scripting-best-practices/
+- https://www.scriptrunner.com/de/blog/5-best-practices
+- https://www.scriptrunner.com/de/blog/powershell-secrets
+- git
