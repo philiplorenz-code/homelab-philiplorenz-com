@@ -71,3 +71,14 @@ Jede Umgebung hat ihre spezifischen Vorzüge:
 Mit VSCode hast du die Möglichkeit, dein Entwicklungserlebnis durch maßgeschneiderte Extensions und eine leistungsstarke Benutzeroberfläche erheblich zu verbessern – ideal für den anspruchsvollen PowerShell-Alltag.
 
 ![Meme: Der Wechsel von CMD zu PowerShell](/img/psmeme-ise-vscode.jpeg)  
+
+## 5. Installation VSCode
+- **[Installiere VSCode](https://code.visualstudio.com/)**
+- Installiere PowerShell Extension
+- Basis-Konfiguration:
+  - Befehlspalette öffnen (Strg + Shift + P) und suchen nach: "Einstellungen (JSON) öffnen" / "Open User Settings (JSON)"
+  - Automatisches Speichern: ("files.autoSave": "afterDelay")
+  - PowerShell als Standard Terminal setzen: ("terminal.integrated.defaultProfile.windows": "PowerShell")
+  - Formatierung bei Speichern aktivieren ("editor.formatOnSave": true)
+  - Einstellungen Synchronisieren (GitHub/Microsoft)
+- Weitere Konfigurationen und Empfehlungen: [VSCode Setup](../Misc/vscode-setup)

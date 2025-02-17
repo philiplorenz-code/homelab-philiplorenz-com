@@ -4,6 +4,9 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
+
+
+
 const config: Config = {
   title: 'PowerShell für Einsteiger',
   tagline: 'Lerne PowerShell von Grund auf',
@@ -49,7 +52,7 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  plugins: ['@devbookhq/docusaurus-code-video-plugin'], 
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',

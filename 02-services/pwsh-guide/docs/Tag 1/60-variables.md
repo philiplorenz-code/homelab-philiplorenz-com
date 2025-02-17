@@ -45,20 +45,7 @@ $person = @{
 Write-Output "Person: $($person.Name) ist $($person.Alter) Jahre alt."
 ```
 
-### 1.3 Variablenscope
 
-PowerShell unterstützt verschiedene Scopes (Bereiche) für Variablen, wie *global*, *script* oder *local*. Innerhalb einer Funktion sind Variablen standardmäßig lokal:
-
-```powershell
-function Test-VariableScope {
-    $localVar = "lokal"
-    Write-Output "Innerhalb der Funktion: $localVar"
-}
-Test-VariableScope
-
-# Außerhalb der Funktion existiert $localVar nicht:
-# Write-Output $localVar  # Führt zu einem Fehler, da $localVar hier nicht definiert ist.
-```
 
 ## 2. Umgebungsvariablen
 
@@ -105,7 +92,8 @@ Get-ChildItem Env:
 
 - **Variablen**: Mit dem `$`-Zeichen deklarierte Container zur Speicherung von Daten – flexibel einsetzbar in Skripten.
 - **Umgebungsvariablen**: Spezielle Variablen, die durch das Betriebssystem bereitgestellt werden und über den `$env:`-Präfix angesprochen werden.
-- **Praktische Anwendung**: Mit `Get-ChildItem Env:` kannst du alle Umgebungsvariablen auflisten, während du normale Variablen zur dynamischen Datenverarbeitung in deinen Skripten nutzt.
-
+- **Praktische Anwendung**: 
+    - Mit `Get-ChildItem Env:` kannst du alle Umgebungsvariablen auflisten, während du normale Variablen zur dynamischen Datenverarbeitung in deinen Skripten nutzt.
+    - Mit `Get-Variable` kannst du alle Variablen auflisten.
 Diese Grundlagen helfen dir, in PowerShell effizient mit Daten zu arbeiten und sowohl lokale als auch systemweite Parameter zu nutzen.
 

@@ -8,11 +8,6 @@ sidebar_position: 140
 
 In PowerShell stehen dir verschiedene Datenstrukturen zur Verfügung, um Daten strukturiert zu speichern und zu verarbeiten. In diesem Dokument betrachten wir im Detail **Arrays**, **Hashtables** und **PSCustomObject**. Diese Datenstrukturen ermöglichen es dir, Informationen effizient zu organisieren und für die weitere Verarbeitung aufzubereiten.
 
-> **Tipp zur Visualisierung:**  
-> Eine begleitende Grafik könnte die Unterschiede der drei Strukturen veranschaulichen:  
-> - Ein Diagramm, das ein Array als lineare Liste mit Indexen (0, 1, 2, …) zeigt.  
-> - Eine schematische Darstellung eines Hashtables mit Schlüssel-Wert-Paaren.  
-> - Eine Illustration eines PSCustomObject als "Objekt" mit benannten Eigenschaften und zugehörigen Werten.
 
 ## 1. Arrays
 

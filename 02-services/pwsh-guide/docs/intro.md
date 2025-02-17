@@ -1,47 +1,58 @@
 ---
+
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Willkommen zum PowerShell Kurs!
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Herzlich willkommen zu meinem umfassenden PowerShell Kurs! Dieser Kurs ist in drei Hauptkapitel unterteilt, die jeweils an einem eigenen Tag behandelt werden:
 
-## Getting Started
+- **Tag 1: Grundlagen und Einstieg in PowerShell**  
+  - Einführung in die PowerShell  
+  - Basisbefehle, Variablen und Datentypen  
+  - Erste Skripte und einfache Automatisierung
 
-Get started by **creating a new site**.
+- **Tag 2: Fortgeschrittene Techniken**  
+  - Objektbasierte Verarbeitung und Pipelines  
+  - Fehlerbehandlung, Debugging & Logging  
+  - Funktionen, Module und Web-API-Interaktionen
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+- **Tag 3: Systemverwaltung und Automatisierung**  
+  - Prozess- & Dienstverwaltung  
+  - PowerShell-Remoting und geplante Aufgaben  
+  - Sicherheit, Anmeldeinformationen und Best Practices
 
-### What you'll need
+## Kursstruktur und Vorgehensweise
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Dieser Kurs ist modular aufgebaut, sodass du in deinem eigenen Tempo lernen und die einzelnen Themen bei Bedarf vertiefen kannst. Jeder Abschnitt enthält:
 
-## Generate a new site
+- **Praxisnahe Beispiele:**  
+  Probiere die bereitgestellten Skripte direkt in deiner PowerShell-Konsole aus.
+- **Detaillierte Erklärungen:**  
+  Verstehe die Hintergründe und Best Practices für eine effiziente Nutzung von PowerShell.
+- **Weiterführende Links:**  
+  Am Ende jedes Kapitels findest du Links zu offiziellen Dokumentationen und Tutorials, um dein Wissen zu vertiefen.
 
-Generate a new Docusaurus site using the **classic template**.
+## Navigation
 
-The classic template will automatically be added to your project after you run the command:
+Nutze die Sidebar, um zwischen den einzelnen Kapiteln zu wechseln:
+- [Tag 1: Grundlagen](./category/tag-1)
+- [Tag 2: Fortgeschrittene Techniken](./category/tag-2)
+- [Tag 3: Systemverwaltung & Automatisierung](./category/tag-3)
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+## Wichtige Links
+## Wichtige Links
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+| Label              | URL                                                                      |
+|--------------------|--------------------------------------------------------------------------|
+| Mein LinkedIn           | [LinkedIn](https://www.linkedin.com/in/philip-lorenz-a8942a1aa/)           |
+| Mein YouTube            | [YouTube](https://www.youtube.com/@Philip-Lorenz)                         |
+| Meine Mail               | [Mail](mailto:contact@philiplorenz.com)                                   |
+| Meine Website            | [Website](https://personal.philiplorenz.com)                              |
+| Awesome PowerShell | [Awesome PowerShell](https://github.com/janikvonrotz/awesome-powershell)   |
+| PowerShell Reddit  | [PowerShell Reddit](https://www.reddit.com/r/PowerShell/)                  |
 
-The command also installs all necessary dependencies you need to run Docusaurus.
 
-## Start your site
 
-Run the development server:
 
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Ich wünsche dir viel Erfolg und Spaß beim Lernen und Anwenden von PowerShell!

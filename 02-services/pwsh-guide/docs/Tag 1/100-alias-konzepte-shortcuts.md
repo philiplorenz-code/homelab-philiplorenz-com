@@ -44,36 +44,4 @@ Set-Alias ll Get-ChildItem
 **Hinweis:**  
 Änderungen an Aliases gelten standardmäßig nur für die aktuelle Sitzung. Um Aliases dauerhaft zu speichern, solltest du sie in dein PowerShell-Profil aufnehmen.
 
-## 4. Alias-Best Practices
-
-- **Lesbarkeit:**  
-  Verwende Aliases vor allem interaktiv. In Skripten empfiehlt es sich, immer den vollständigen Cmdlet-Namen zu verwenden, um die Lesbarkeit und Wartbarkeit zu gewährleisten.
-
-- **Konsistenz:**  
-  Nutze möglichst die von PowerShell standardmäßig bereitgestellten Aliases, um Verwirrung zu vermeiden.
-
-## 5. Weitere Shortcuts in PowerShell
-
-Neben Aliases gibt es weitere praktische Shortcuts, die deine Arbeit in PowerShell effizienter machen:
-
-- **Tab-Vervollständigung:**  
-  Drücke die `Tab`-Taste, um Befehle, Parameter und Dateinamen automatisch zu vervollständigen.
-
-- **Befehls-Historie:**  
-  Mit den Pfeiltasten kannst du durch die zuvor eingegebenen Befehle navigieren.
-
-- **Copy/Paste:**  
-  In der PowerShell-Konsole lassen sich Befehle mit `Ctrl+C` und `Ctrl+V` kopieren und einfügen.
-
-## 6. Zusammenfassung
-
-- **Aliases:**  
-  Erlauben es, lange Cmdlet-Namen durch kurze, intuitive Bezeichnungen zu ersetzen und die interaktive Nutzung zu beschleunigen.
-
-- **Shortcuts:**  
-  Funktionen wie Tab-Vervollständigung und die Befehls-Historie helfen dabei, wiederkehrende Aufgaben schneller zu erledigen.
-
-- **Best Practices:**  
-  Verwende Aliases interaktiv, während in Skripten der vollständige Cmdlet-Name bevorzugt wird, um Klarheit und Wartbarkeit zu gewährleisten.
-
 Mit diesen Alias-Konzepten und Shortcuts kannst du deine tägliche PowerShell-Arbeit effizienter gestalten.

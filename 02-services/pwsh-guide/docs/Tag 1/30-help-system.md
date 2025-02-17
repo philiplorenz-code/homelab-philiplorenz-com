@@ -112,10 +112,10 @@ Das Hilfesystem in PowerShell ist ein mächtiges Werkzeug, das dir dabei hilft, 
 - **`Get-Help`:**  
   Für schnellen Zugriff auf Hilfeinformationen zu Cmdlets und Funktionen.
 
-- **about_-Themen:**  
+- **`about_-Themen`:**  
   Um tiefer in die Konzepte und Best Practices von PowerShell einzutauchen.
 
-- **Online-Dokumentation:**  
+- **`Online-Dokumentation`:**  
   Für stets aktuelle und umfassende Informationen.
 
 Mit der regelmäßigen Nutzung des Hilfesystems wirst du deine Kenntnisse vertiefen und deine Skripting-Fähigkeiten deutlich verbessern.

@@ -57,7 +57,7 @@ Get-Command -Verb * | Select-Object -ExpandProperty Verb | Sort-Object -Unique
 ## 4. Best Practices beim Cmdlet-Design
 
 - **Genehmigte Verben verwenden:**  
-  Nutze die offizielle Liste, um eine konsistente Namensgebung zu gewährleisten.
+  Nutze die offizielle Liste, um eine konsistente Namensgebung zu gewährleisten. (`Get-Verb`)
 
 - **Präziser Noun:**  
   Wähle einen Noun, der klar beschreibt, worauf sich die Aktion bezieht.

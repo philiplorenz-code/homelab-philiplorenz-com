@@ -50,10 +50,6 @@ $string = "Apfel, Banane, Kirsche"
 $teile = $string.Split(",")
 # Ausgabe: Array mit den Elementen "Apfel", " Banane", " Kirsche"
 Write-Output $teile
-
-# Optional: Entfernen von Leerzeichen in jedem Element
-$teileClean = $teile | ForEach-Object { $_.Trim() }
-Write-Output $teileClean
 ```
 
 ## 4. Formatieren
@@ -91,25 +87,7 @@ $formatted = $zahl.ToString("F2")  # Rundet auf 2 Dezimalstellen
 Write-Output "Formatierte Zahl: $formatted"  # Ausgabe: "Formatierte Zahl: 3.14"
 ```
 
-## 5. Besonderheiten bei der Interpretation von Operatoren
-
-Je nach Datentyp kann der gleiche Ausdruck unterschiedliche Ergebnisse liefern:
-
-```powershell
-# Addition als numerische Operation
-[int]$a = 5
-[int]$b = 5
-$resultZahl = $a + $b   # ergibt 10
-Write-Output "Zahlenaddition: 5 + 5 = $resultZahl"
-
-# Verkettung als String-Operation
-[string]$aStr = "5"
-[string]$bStr = "5"
-$resultString = $aStr + $bStr   # ergibt "55"
-Write-Output "String-Konkatenation: '5' + '5' = $resultString"
-```
-
-## 6. Zusammenfassung
+## 5. Zusammenfassung
 
 - **Ersetzen:**  
   Mit dem `-replace` Operator kannst du Teile eines Strings ersetzen.
@@ -124,7 +102,3 @@ Write-Output "String-Konkatenation: '5' + '5' = $resultString"
   Nutzt String-Interpolation, den Format-Operator (-f) oder `.ToString()` für präzise Formatierungen.
 
 Diese Techniken der String-Manipulation ermöglichen es dir, Textdaten in PowerShell flexibel zu verarbeiten und an deine Anforderungen anzupassen.
-
----
-
-*Hinweis: Dieses Dokument richtet sich an PowerShell-Anwender, die ihre Kenntnisse in der String-Manipulation vertiefen möchten. Weitere Details findest du in der offiziellen PowerShell-Dokumentation und in weiterführenden Tutorials.*

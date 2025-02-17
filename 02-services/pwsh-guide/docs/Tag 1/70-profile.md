@@ -58,6 +58,7 @@ function Show-Greeting {
     )
     Write-Output "Hallo, $Name! Willkommen in deiner PowerShell-Sitzung."
 }
+Show-Greeting
 
 # Automatisches Laden eines Moduls (falls installiert)
 if (Get-Module -ListAvailable -Name Posh-Git) {
