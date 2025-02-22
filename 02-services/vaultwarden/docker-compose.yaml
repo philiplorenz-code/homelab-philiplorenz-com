@@ -8,5 +8,7 @@ services:
      - 9445:80
     volumes:
      - bitwarden:/data:rw
+    environment:
+      ADMIN_TOKEN: ""
 volumes:
   bitwarden:
