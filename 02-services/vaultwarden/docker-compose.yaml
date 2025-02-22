@@ -1,7 +1,8 @@
 version: "3"
 services:
   vaultwarden:
-    image: vaultwarden/server:1.32.2
+    #image: vaultwarden/server:1.32.2
+    image: vaultwarden/server:1.33
     container_name: vaultwarden
     restart: unless-stopped
     ports:
