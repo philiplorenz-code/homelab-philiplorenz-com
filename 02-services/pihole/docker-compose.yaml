@@ -11,7 +11,7 @@ services:
       # Default HTTPs Port. FTL will generate a self-signed certificate
       - "444:443/tcp"
       # Uncomment the below if using Pi-hole as your DHCP Server
-      #- "67:67/udp"
+      - "67:67/udp"
     environment:
       TZ: 'Europe/Berlin'
       FTLCONF_webserver_api_password: ''
