@@ -15,10 +15,10 @@ pihole:
     TZ: 'Europe/Berlin'
     FTLCONF_webserver_api_password: ''
   volumes:
-    - 'etc:/etc/pihole'
+    - etc:/etc/pihole
     - './etc-dnsmasq.d:/etc/dnsmasq.d'
   cap_add:
     - NET_ADMIN
   restart: unless-stopped
 volumes:
-etc:
+  etc:
