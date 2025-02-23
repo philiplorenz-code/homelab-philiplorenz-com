@@ -20,7 +20,7 @@ services:
       - './etc-dnsmasq.d:/etc/dnsmasq.d'
     cap_add:
       - NET_ADMIN
-    network: host
+    network_mode: "host"
     restart: unless-stopped
 volumes:
   etc:
