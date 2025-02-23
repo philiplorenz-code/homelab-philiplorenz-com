@@ -18,6 +18,7 @@ services:
     volumes:
       - etc:/etc/pihole
       - './02-services/pihole/etc-dnsmasq.d:/etc/dnsmasq.d'
+      - "./:/etc/test"
     cap_add:
       - NET_ADMIN
     restart: unless-stopped
