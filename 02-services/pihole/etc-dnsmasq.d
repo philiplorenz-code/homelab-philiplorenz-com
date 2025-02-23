@@ -1,21 +1,25 @@
-# Datei: /etc/dnsmasq.d/02-custom.conf
-# Diese Datei konfiguriert dnsmasq für dein 192.168.0.0/16-Netzwerk
+# /etc/dnsmasq.d/custom.conf
 
-# DNS-Anfragen nur von Clients im 192.168.0.0/16-Netzwerk erlauben
-listen-address=192.168.0.1
-listen-address=192.168.255.254
+# DNS-Server konfigurieren
+server=8.8.8.8
+server=8.8.4.4
+server=1.1.1.1
 
-# Interface, an dem DNS-Anfragen akzeptiert werden (ändern, falls nicht eth0)
-interface=eth0
+# Lokale DNS-Anfragen erlauben
+domain-needed
+bogus-priv
 
-# Anfrageweiterleitung nur für lokale Clients
-localise-queries
-
-# Hostnamen automatisch auflösen
-expand-hosts
-
-# Standard-Domain für lokale Geräte (optional ändern)
-domain=home.local
-
-# Maximale Anzahl gleichzeitiger Anfragen
+# Cache aktivieren und groß setzen
 cache-size=10000
+
+# Anfragen von allen Interfaces akzeptieren
+interface=eth0,wlan0
+listen-address=0.0.0.0
+bind-interfaces
+
+# DHCP-Server deaktivieren (falls nicht benötigt)
+no-dhcp-interface=
+
+# Logs minimieren (optional)
+log-queries
+log-facility=/var/log/dnsmasq.log
