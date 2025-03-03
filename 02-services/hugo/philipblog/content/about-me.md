@@ -1,3 +1,1 @@
-{{< alert >}}
-**Warning!** This page is under construction!
-{{< /alert >}}
+# This page is under construction!
