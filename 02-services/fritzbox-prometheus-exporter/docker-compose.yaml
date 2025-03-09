@@ -1,0 +1,11 @@
+services:
+  fritz-exporter:
+    image: pdreker/fritz_exporter:2
+    container_name: fritz-exporter
+    restart: unless-stopped
+    environment:
+      FRITZ_HOSTNAME: '192.168.30.100'
+      FRITZ_USERNAME: ''
+      FRITZ_PASSWORD: ''
+    ports:
+      - "9787:9787"
