@@ -10,16 +10,5 @@ services:
     volumes:
       - ./prometheus:/etc/prometheus
       - prom_data:/prometheus
-  grafana:
-    image: grafana/grafana
-    container_name: grafana
-    ports:
-      - 3004:3000
-    restart: unless-stopped
-    environment:
-      - GF_SECURITY_ADMIN_USER=""
-      - GF_SECURITY_ADMIN_PASSWORD=""
-    volumes:
-      - ./grafana:/etc/grafana/provisioning/datasources
 volumes:
   prom_data:
