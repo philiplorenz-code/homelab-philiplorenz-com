@@ -13,6 +13,6 @@
 
 - name: Enable UFW
   ufw:
-    state: enabled
+    state: disabled
     default: deny
     logging: on
