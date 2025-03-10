@@ -1,6 +1,6 @@
 services:
   fritzbox-exporter:
-    image: fritzbox-prometheus-exporter:latest
+    image: ghcr.io/sberk42/fritzbox_exporter/fritzbox_exporter:latest
     environment:
       USERNAME: ${USERNAME}
       PASSWORD: ${PASSWORD}
