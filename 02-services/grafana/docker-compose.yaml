@@ -1,0 +1,10 @@
+services:
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    user: "1000"
+volumes:
+  grafana-storage:
