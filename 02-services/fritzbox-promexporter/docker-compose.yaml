@@ -12,8 +12,8 @@ services:
     dns: 192.168.30.100
     ports:
       - "9042:9042"
-    #expose:
-    #  - "9042"
+    expose:
+     - "9042"
     restart: unless-stopped
     environment:
       USERNAME: ${USERNAME}
