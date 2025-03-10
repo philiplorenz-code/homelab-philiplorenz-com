@@ -3,7 +3,9 @@ services:
     image: pdreker/fritz_exporter:2
     container_name: fritz-exporter
     restart: unless-stopped
-    env_file:
-      - stack.env
+    environment:
+      FRITZ_HOSTNAME: ${FRITZ_HOSTNAME}
+      FRITZ_USERNAME: ${FRITZ_USERNAME}
+      FRITZ_PASSWORD: ${FRITZ_PASSWORD}
     ports:
       - "9787:9787"
