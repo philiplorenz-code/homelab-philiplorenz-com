@@ -23,6 +23,11 @@ scrape_configs:
       - targets:
           - "192.168.30.11:9787"
 
+  - job_name: "betterfritzbox"
+    static_configs:
+      - targets:
+          - "192.168.30.11:9042"
+
   - job_name: 'pve'
     static_configs:
       - targets:
