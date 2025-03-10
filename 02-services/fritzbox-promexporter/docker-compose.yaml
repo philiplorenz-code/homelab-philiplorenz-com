@@ -2,9 +2,9 @@ services:
   fritzbox-exporter:
     image: fritzbox-prometheus-exporter:latest
     environment:
-      - USERNAME:${USERNAME}
-      - PASSWORD:${PASSWORD}
-      - GATEWAY_URL:${GATEWAY_URL}
+      USERNAME: ${USERNAME}
+      PASSWORD: ${PASSWORD}
+      GATEWAY_URL: ${GATEWAY_URL}
     restart: unless-stopped
     ports:
       - "8080:8080"
