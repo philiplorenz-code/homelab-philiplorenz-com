@@ -1,10 +1,22 @@
+# https://github.com/sberk42/fritzbox_exporter?tab=readme-ov-file
 services:
-  fritzbox-exporter:
-    image: ghcr.io/sberk42/fritzbox_exporter/fritzbox_exporter:latest
+  fritzbox-prometheus-exporter:
+    hostname: fritzbox-prometheus-exporter
+    #image: ghcr.io/sberk42/fritzbox_exporter/fritzbox_exporter:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fritzbox-prometheus-exporter
+    # for dns issues like "dial tcp: lookup fritz.box on 127.0.0.11:53: no such host"
+    # uncomment and fill the following line:
+    dns: 192.168.30.100
+    ports:
+      - "9042:9042"
+    #expose:
+    #  - "9042"
+    restart: unless-stopped
     environment:
       USERNAME: ${USERNAME}
       PASSWORD: ${PASSWORD}
       GATEWAY_URL: ${GATEWAY_URL}
-    restart: unless-stopped
-    ports:
-      - "8080:8080"
+      LISTEN_ADDRESS: 0.0.0.0:9042
