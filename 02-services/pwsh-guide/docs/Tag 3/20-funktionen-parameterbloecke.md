@@ -8,11 +8,6 @@ sidebar_position: 20
 
 Funktionen sind ein wesentlicher Bestandteil von PowerShell, da sie es dir ermöglichen, wiederverwendbaren und modularen Code zu schreiben. Eine Funktion wird mit dem Schlüsselwort `function` definiert, gefolgt von einem Funktionsnamen und einem Codeblock. Parameterblöcke, die mit `param()` definiert werden, erlauben es dir, Eingabeparameter zu spezifizieren, deren Datentypen festzulegen und zusätzliche Attribute wie Pflichtparameter oder Validierung zu nutzen.
 
-> **Tipp zur Visualisierung:**  
-> Eine begleitende Grafik könnte den Aufbau einer Funktion veranschaulichen. Zum Beispiel:
-> - Den Funktionskopf mit dem Namen und Parameterblock.
-> - Den Hauptcodeblock, in dem die Logik implementiert ist.
-> - Hinweise zur Fehlerbehandlung (z. B. Try/Catch-Blöcke) innerhalb der Funktion.
 
 ## 1. Grundlagen von Funktionen
 

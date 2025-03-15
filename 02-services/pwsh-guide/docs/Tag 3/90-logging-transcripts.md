@@ -8,11 +8,6 @@ sidebar_position: 90
 
 Das Protokollieren von Skript-Ausgaben ist eine wertvolle Methode, um die Ausführung von PowerShell-Skripten zu überwachen, Fehler zu diagnostizieren und Aktivitäten zu dokumentieren. Mit **Start-Transcript** kannst du den gesamten Konsolenausgang in eine Datei schreiben, während **Stop-Transcript** die Aufzeichnung beendet.
 
-> **Tipp zur Visualisierung:**  
-> Eine begleitende Grafik könnte den Ablauf einer Transkription veranschaulichen, indem sie zeigt:  
-> - Den Start der Aufzeichnung (Start-Transcript)  
-> - Den fortlaufenden Konsolenausgang während der Skriptausführung  
-> - Das Beenden der Aufzeichnung (Stop-Transcript)
 
 ## 1. Grundlagen von Start-Transcript
 

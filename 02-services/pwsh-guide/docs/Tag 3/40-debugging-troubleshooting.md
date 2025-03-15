@@ -8,11 +8,6 @@ sidebar_position: 40
 
 Effektives Debugging und Troubleshooting sind entscheidend, um PowerShell-Skripte zu entwickeln und Fehler schnell zu beheben. Hier findest du leicht zugängliche Tipps, die dir helfen, Probleme zu identifizieren und zu lösen – von der Verwendung von **Write-Debug** bis hin zum Einsatz des integrierten PowerShell-Debuggers und der Debugging-Tools in Visual Studio Code.
 
-> **Tipp zur Visualisierung:**  
-> Eine begleitende Grafik könnte den Ablauf eines Debugging-Prozesses veranschaulichen, z. B. wie:
-> - **Write-Debug** Meldungen erzeugt und diese bei aktiviertem Debug-Modus angezeigt werden.
-> - Breakpoints im Code gesetzt werden und der Debugger an diesen Punkten anhält.
-> - Visual Studio Code das Durchschreiten des Codes (Step Over, Step Into, etc.) und die Variable-Inspektion darstellt.
 
 ## 1. Debugging mit Write-Debug
 

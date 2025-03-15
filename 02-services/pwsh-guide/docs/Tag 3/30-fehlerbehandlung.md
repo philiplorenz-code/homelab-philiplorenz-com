@@ -8,12 +8,6 @@ sidebar_position: 30
 
 Fehlerbehandlung ist ein wesentlicher Bestandteil robuster PowerShell-Skripte. Sie ermöglicht es, Fehler frühzeitig zu erkennen, kontrolliert darauf zu reagieren und gegebenenfalls Ressourcen freizugeben. In PowerShell erfolgt die Fehlerbehandlung in der Regel über **try/catch**-Blöcke. Zusätzlich kann die globale Variable **$ErrorActionPreference** genutzt werden, um das Verhalten von Fehlern in einem Skript zu steuern.
 
-> **Tipp zur Visualisierung:**  
-> Eine ergänzende Grafik könnte den Ablauf eines try/catch-Blocks veranschaulichen, inklusive der Abfolge:  
-> - Ausführung des try-Blocks  
-> - Auftreten eines Fehlers  
-> - Übergang in den catch-Block  
-> - Ausführung des finally-Blocks (falls vorhanden)
 
 ## 1. Grundlagen der Fehlerbehandlung mit try/catch
 

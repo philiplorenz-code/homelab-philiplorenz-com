@@ -8,12 +8,6 @@ sidebar_position: 80
 
 Das Planen von PowerShell-Skripten ist eine wichtige Methode, um wiederkehrende Aufgaben zu automatisieren. In Windows kannst du dazu den integrierten Task Scheduler oder das Befehlszeilentool **schtasks** verwenden. Zusätzlich bietet PowerShell eigene Funktionen, wie Scheduled Jobs, um Aufgaben direkt zu planen.
 
-> **Tipp zur Visualisierung:**  
-> Eine begleitende Grafik könnte den Unterschied zwischen:
-> - Der Verwendung des Task Schedulers (GUI)  
-> - Der Nutzung von schtasks (CLI)  
-> - Der Anwendung von PowerShell Scheduled Jobs  
-> darstellen.
 
 ## 1. Task Scheduler (GUI)
 
