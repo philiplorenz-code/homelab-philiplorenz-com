@@ -6,62 +6,39 @@ sidebar_position: 1
 
 # Aufgaben - Tag 1
 
-## Erstes PowerShell-Skript erstellen und ausführen
-Erstelle ein PowerShell-Skript, das den folgenden Anforderungen entspricht:
+## Teil 1: PowerShell vs. CMD – Mini-Vergleich
+1. **Öffne** eine PowerShell-Konsole.
+2. **Wechsle** in das Verzeichnis `C:\Windows\System32`.
+3. **Zeige** den Inhalt des Verzeichnisses an. Vergleiche, wie du den gleichen Verzeichnisinhalt in der **CMD** anzeigen würdest.
+4. **Rufe** die integrierte Hilfe zu `Get-ChildItem` auf, um dir ein Beispiel oder die Parameter anzeigen zu lassen.
 
-- Das Skript soll eine Nachricht auf der Konsole ausgeben. Wähle einen Begrüßungstext deiner Wahl.
-- Speichere das Skript mit einem sinnvollen Namen in einem Ordner deiner Wahl.
-- Führe das Skript anschließend über die PowerShell aus.
+## Teil 2: Systeminformationen sammeln & berichten
 
-**Hinweis:**
-Falls die Ausführung nicht erlaubt ist, überlege, welche PowerShell-Einstellung dafür verantwortlich sein könnte und passe sie gegebenenfalls temporär an.
+1. **Ermittle** den Computernamen über eine Umgebungsvariable.
+2. **Lese** den Namen deines Betriebssystems aus (z. B. über WMI oder CIM).
+3. **Bestimme** den freien Speicherplatz auf Laufwerk C.
+4. **Berechne** prozentual, wie viel Speicherplatz noch frei ist (ganz einfache Mathematik).
+5. **Speichere** diese Informationen in einer Textdatei (z. B. in `C:\Temp\SystemReport.txt`).
 
-## Aufgabe: Farbe in der PowerShell-Ausgabe ändern
-In dieser Aufgabe wirst du herausfinden, wie du mit Write-Host eine farbige Ausgabe in PowerShell erzeugen kannst – ohne Google zu verwenden!
+**Tipp:**
+Schaue dir die Befehle an:
 
-- Verwende die PowerShell-Hilfe, um die verfügbaren Parameter für den Befehl Write-Host zu finden.
-- Finde heraus, welche Parameter die Schriftfarbe oder den Hintergrund der Ausgabe beeinflussen können.
-- Schreibe ein Skript, das eine Nachricht in einer anderen Farbe als der Standardfarbe ausgibt.
-- Führe dein Skript aus und überprüfe das Ergebnis.
+- Get-CimInstance
+- Out-File
 
-**Hinweis:**
-Nutze die PowerShell-Hilfe und Befehle wie Get-Help, um die benötigten Informationen zu erhalten.
+# Teil 3: Erste Schritte mit dem Active Directory
 
-## Aufgabe: Arbeiten mit der PowerShell-Verb-Noun-Konvention
-PowerShell verwendet eine Verb-Noun-Konvention für Befehle. In dieser Aufgabe wirst du lernen, wie du mit bestehenden Cmdlets arbeitest und sie findest.
+1. **Hole** eine Liste aller Benutzer im AD.
+2. Hole eine Liste aller Benutzer im AD mitsamt dem Attribut LastLogonDate
+3. **Speichere** das Ergebnis in einer Textdatei.
 
-Aufgabenstellung:
-- Finde heraus, welche PowerShell-Cmdlets mit dem Verb "Get" beginnen.
-- Suche ein Cmdlet, das eine Liste aller laufenden Prozesse liefert.
-- Suche ein Cmdlet, das Informationen über Dateien und Ordner in einem Verzeichnis anzeigt.
-- Führe beide Cmdlets aus, um ihre Ausgabe zu sehen.
+# Aufgabe 4: Mini-Skript korrigieren
 
-**Erwartetes Ergebnis:**
-Am Ende der Aufgabe solltest du zwei nützliche Cmdlets gefunden und ausgeführt haben.
+Dein Vorgänger hat ein Mini-Skript namens **`DiskCheck.ps1`** erstellt. Dieses Skript soll zwei Dinge tun:
 
-## Aufgabe: Berechnungen mit PowerShell durchführen
-Erstelle drei Variablen:
+1. **Den freien Festplattenspeicher** auf Laufwerk C: ermitteln.
+2. **Ergebnis** in eine Textdatei schreiben.
 
-- Eine Variable für eine Zahl deiner Wahl.
-- Eine zweite Variable für eine andere Zahl.
-- Eine dritte Variable für eine Rechenoperation (Addition, Subtraktion, Multiplikation oder Division).
-- Führe mit diesen Variablen eine Berechnung durch und speichere das Ergebnis in einer weiteren Variablen.
+Das Script liegt auf deiner VM hier: C:\assets\aufgaben\DiskCheck.ps1
 
-Gib das Ergebnis in einem vollständigen Satz aus, z. B.:
-**"Die Summe von 5 und 3 beträgt 8."**
-
-**Zusatzaufgabe:**
-Berechne, wie viele Megabyte in 2 Gigabyte enthalten sind, und gib das Ergebnis aus.
-Nutze dafür die in PowerShell unterstützten Speichereinheiten (KB, MB, GB).
-
-## Aufgabe: Arbeiten mit Variablen und Umgebungsvariablen
-- Erstelle drei normale Variablen:
-  - Eine Variable mit deinem Namen als Zeichenkette (String).
-  - Eine Variable mit deinem Alter als Zahl.
-  - Eine Variable mit einer Liste von drei deiner Lieblingsfarben (Array).
-- Greife auf eine vorhandene Umgebungsvariable zu, die Informationen über dein System enthält (z. B. den Benutzernamen oder das Betriebssystem).
-- Setze eine eigene Umgebungsvariable mit einem beliebigen Wert und lasse dir diesen danach ausgeben.
-- Gib alle Werte in einer formatierten Ausgabe auf der Konsole aus.
-
-**Zusatzaufgabe:**
-Finde heraus, ob deine gesetzte Umgebungsvariable nach dem Schließen der PowerShell-Sitzung noch vorhanden ist. Falls nicht, warum?
+Leider funktioniert das Script nicht so wie es soll - finde die Fehlerquellen und behebe diese!
