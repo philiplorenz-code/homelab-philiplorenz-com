@@ -1,6 +1,6 @@
 ---
 id: outputs
-title: PowerShell Output & Return: So verhinderst du ungewollte Rückgaben
+title: PowerShell Output & Return - So verhinderst du ungewollte Rückgaben
 ---
 
 In PowerShell können Rückgabewerte aus Funktionen über verschiedene Mechanismen entstehen – selbst dann, wenn man es vielleicht gar nicht beabsichtigt. Ein häufiger Stolperstein ist der Unterschied zwischen Write-Output und return, sowie den verschiedenen Output Streams (z.B. Output, Error, Verbose, Debug und Information).
