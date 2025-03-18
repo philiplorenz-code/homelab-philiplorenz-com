@@ -3,125 +3,137 @@ id: kill-your-darling
 title: Kill your Darling - Wo die PowerShell versagt
 ---
 
-# PowerShell Synopsis – Strukturierte Dokumentation für Funktionen
+# Umgang mit extrem großen Dateien
 
-Eine gut strukturierte **Dokumentation** ist der Schlüssel zu wartbaren und verständlichen PowerShell-Skripten. Besonders in **größeren Projekten** oder **Teams** ist es wichtig, dass jeder schnell nachvollziehen kann, **was eine Funktion tut, welche Parameter sie benötigt und welche Werte sie zurückgibt**.
+## Problem
 
-Mit einer **Synopsis** kannst du diese Informationen standardisiert direkt in dein Skript integrieren, sodass sie mit **Get-Help** abrufbar sind. In diesem Artikel erfährst du, wie du **eine professionelle Synopsis** für deine PowerShell-Funktionen erstellst.
+Cmdlets wie `Get-Content` laden standardmäßig die gesamte Datei in den Speicher. Bei sehr großen Dateien (z.B. 10-GB-Logfiles) kann das zu hohem RAM-Verbrauch oder einer `OutOfMemoryException` führen.
 
----
-
-## 1. Warum ist eine PowerShell Synopsis wichtig?
-
-Eine **Synopsis** ist die **Kurzbeschreibung einer Funktion** und dient als Grundlage für die automatische Hilfe-Ausgabe in PowerShell.
-
-✔ **Erleichtert die Wartung und Weiterentwicklung**  
-✔ **Hilft Kollegen, Funktionen schneller zu verstehen**  
-✔ **Macht Funktionen für `Get-Help` nutzbar**  
-✔ **Erhöht die Code-Qualität in größeren Teams**  
-
-> **Tipp:** Wenn du ein Skript in einem Unternehmen nutzt, ist eine gut dokumentierte Funktion oft genauso wichtig wie der Code selbst!
-
----
-
-## 2. Aufbau einer PowerShell Synopsis
-
-Eine **vollständige Dokumentation** für eine Funktion enthält folgende Abschnitte:
-
-| **Abschnitt** | **Beschreibung** |
-|--------------|------------------|
-| `.SYNOPSIS`  | **Kurzbeschreibung der Funktion** |
-| `.DESCRIPTION` | **Detailliertere Beschreibung der Funktion** |
-| `.PARAMETER <Name>` | **Erläuterung der einzelnen Parameter** |
-| `.EXAMPLE` | **Ein konkretes Anwendungsbeispiel** |
-| `.NOTES` | **Zusätzliche Hinweise oder Metainformationen** |
-| `.OUTPUTS` | **Erwartete Rückgabewerte** |
-
----
-
-## 3. Beispiel für eine vollständige PowerShell Synopsis
-
-Hier ein Beispiel für eine PowerShell-Funktion, die einen Benutzer in Active Directory sucht:
+## Demonstration / Code-Beispiel
 
 ```powershell
-function Get-ADUserDetails {
-    <#
-    .SYNOPSIS
-    Ruft detaillierte Informationen zu einem Active Directory-Benutzer ab.
-
-    .DESCRIPTION
-    Diese Funktion sucht in Active Directory nach einem Benutzer basierend auf seinem SamAccountName 
-    und gibt eine Zusammenfassung der wichtigsten Benutzerdaten zurück.
-
-    .PARAMETER UserName
-    Der SamAccountName des Benutzers, nach dem gesucht wird.
-
-    .EXAMPLE
-    Get-ADUserDetails -UserName "jdoe"
-    Gibt Informationen über den Benutzer mit dem SamAccountName "jdoe" zurück.
-
-    .OUTPUTS
-    Gibt ein PSObject mit Benutzerdetails zurück.
-
-    .NOTES
-    Autor: Dein Name
-    Version: 1.0
-    Erstelldatum: 2024-01-10
-    #>
-
-    param (
-        [Parameter(Mandatory = $true)]
-        [string]$UserName
-    )
-
-    try {
-        Get-ADUser -Filter {SamAccountName -eq $UserName} -Properties DisplayName, EmailAddress, Title
-    }
-    catch {
-        Write-Error "Fehler beim Abrufen des Benutzers: $_"
-    }
+# Lädt die gesamte Datei in den RAM (problematisch bei großen Dateien)
+Get-Content -Path "C:\large.log" | ForEach-Object {
+    # Verarbeitung jeder Zeile
 }
 ```
 
----
+## Workaround
 
-## 4. So rufst du die Dokumentation mit `Get-Help` ab
-
-
-sd
-Nachdem du die Funktion in PowerShell geladen hast, kannst du die Dokumentation mit **Get-Help** abrufen:
+### Stream-basiertes Lesen mit .NET
 
 ```powershell
-Get-Help Get-ADUserDetails
+$reader = [System.IO.File]::OpenText("C:\large.log")
+try {
+    while ($line = $reader.ReadLine()) {
+        # Verarbeitung pro Zeile
+    }
+}
+finally {
+    $reader.Close()
+}
 ```
 
-➡ **Ergebnis:** Eine kurze Synopsis mit Beschreibung, Parametern und Beispielen wird angezeigt.
+**Vorteil:**  
+RAM-Verbrauch bleibt stabil, da zeilenweise gelesen wird.
 
-Du kannst auch eine detaillierte Ansicht anfordern:
+# Begrenzte ZIP-Kompression großer Verzeichnisse
+
+## Problem
+
+`Compress-Archive` (PowerShell 5.1) hat folgende Einschränkungen:  
+- Maximal ~2 GB pro Datei im Archiv  
+- Hoher RAM-Verbrauch bei großen Ordnern (>25 GB)  
+- Keine ZIP64-Unterstützung
+
+## Demonstration / Code-Beispiel
 
 ```powershell
-Get-Help Get-ADUserDetails -Full
+# Fehlermeldung bei großen Dateien:
+Compress-Archive -Path "C:\MassiveFolder" -DestinationPath "C:\large.zip"
 ```
 
-➡ Zeigt **alle Informationen**, inklusive Beispielen und Notizen.
+## Workaround
 
----
+### .NET-ZipFile oder 7-Zip
 
-## 5. Best Practices für PowerShell-Dokumentation
+```powershell
+Add-Type -AssemblyName System.IO.Compression.FileSystem
+[System.IO.Compression.ZipFile]::CreateFromDirectory(
+    "C:\MassiveFolder", 
+    "C:\large.zip"
+)
+```
 
-**✔ Halte die `.SYNOPSIS` kurz und prägnant**  
-**✔ Ergänze `.EXAMPLE` mit praktischen Anwendungsfällen**  
-**✔ Verwende `.NOTES` für wichtige Zusatzinformationen**  
-**✔ Aktualisiere die Dokumentation regelmäßig**  
+**Externer Tipp:**  
+Für Dateien >4 GB: 7-Zip CLI (`7z a -tzip large.zip C:\MassiveFolder`).
 
-> **Tipp:** In Unternehmen ist es oft eine **Best Practice**, dass jede Funktion eine vollständige Synopsis haben muss.
 
----
 
-## 6. Fazit
+# Schwächen in der Parallelverarbeitung
 
-Eine gut dokumentierte PowerShell-Funktion spart Zeit und vermeidet Missverständnisse. Mit einer **strukturierten Synopsis** machst du deine Skripte **nachvollziehbarer, wartbarer und professioneller**.
+## Problem
 
-✅ **Nutze `.SYNOPSIS`, `.PARAMETER`, `.EXAMPLE` und `.NOTES` für eine vollständige Dokumentation**  
-✅ **Mach Funktionen mit `Get-Help` nutzbar**  
-✅ **Halte dich an eine konsistente Struktur, um Code besser lesbar zu machen**  
+PowerShell 5.1 bietet keine native Parallelverarbeitung für Schleifen.  
+- `Start-Job` ist prozessbasiert (langsam)  
+- `Workflows` sind komplex und veraltet  
+- `ForEach-Object -Parallel` erst ab PowerShell 7
+
+## Demonstration / Code-Beispiel
+
+```powershell
+# Serielle Ausführung (1 Thread)
+1..10 | ForEach-Object {
+    Start-Sleep -Seconds 1
+    "Verarbeitung: $_"
+}
+```
+
+## Workaround
+
+### ThreadJobs oder Runspaces
+
+```powershell
+# Mit ThreadJob-Modul (Install-Module ThreadJob):
+1..10 | Start-ThreadJob -ScriptBlock {
+    Start-Sleep -Seconds 1
+    "Job $_"
+} | Receive-Job -Wait -AutoRemoveJob
+```
+
+**Vorteil:**  
+Threads statt Prozesse → schneller und ressourcenschonender.
+
+
+
+# Eingeschränkte Quoten im Remoting
+
+## Problem
+
+Standardmäßige WinRM-Limits in PowerShell 5.1:  
+- `MaxMemoryPerShellMB = 150` → Out of Memory bei großen Daten  
+- `MaxConcurrentUsers = 5` → Skalierungsprobleme
+
+## Demonstration / Code-Beispiel
+
+```powershell
+Invoke-Command -ComputerName Server01 -ScriptBlock {
+    # 1 Million Einträge → Überschreitet Speicherquote
+    1..1000000 | ForEach-Object { "Data $_" }
+}
+```
+
+## Workaround
+
+### Quoten erhöhen
+
+```powershell
+# Maximaler RAM pro Session auf 2 GB setzen:
+Set-Item WSMan:\localhost\Shell\MaxMemoryPerShellMB -Value 2048
+
+# Oder via GPO für Unternehmen.
+```
+
+**Alternativ:**  
+Daten über Fileshares austauschen statt via Remoting streamen.
+
