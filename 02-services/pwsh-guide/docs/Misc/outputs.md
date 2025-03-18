@@ -50,8 +50,7 @@ Dadurch wird kein Wert in den Output Stream geschrieben.
 
 ### Verzicht auf Write-Output
 
-Möchtest du wirklich nichts zurückgeben, dann verzichte auf das Write-Output (oder Write-Host) und nutze beispielsweise Write-Verbose, wenn du es nur zu Debug- oder Info-Zwecken brauchst.
-Write-Verbose landet im Verbose Stream und wird nur angezeigt, wenn -Verbose verwendet oder $VerbosePreference auf Continue gesetzt ist.
+Möchtest du wirklich nichts zurückgeben, dann verzichte auf das Write-Output und nutze beispielsweise Write-Host, wenn du es nur zu Debug- oder Info-Zwecken brauchst.
 
 
 ## Fazit
