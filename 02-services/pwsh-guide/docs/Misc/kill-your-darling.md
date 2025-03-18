@@ -87,6 +87,8 @@ function Get-ADUserDetails {
 
 ## 4. So rufst du die Dokumentation mit `Get-Help` ab
 
+
+sd
 Nachdem du die Funktion in PowerShell geladen hast, kannst du die Dokumentation mit **Get-Help** abrufen:
 
 ```powershell
